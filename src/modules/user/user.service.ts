@@ -1,4 +1,6 @@
 import { Injectable } from '@nestjs/common'
+import * as Sequelize from 'sequelize'
+import sequelize from '../../database/sequelize'
 
 interface registerParams {
   username: string,
@@ -23,5 +25,12 @@ export class UserService {
         token: 'sdfasfajfgas54tf5'
       }
     }
+  },
+
+ async findOne(username) {
+    const sql = `
+
+    `
+    await sequelize.query(sql)
   }
 }
