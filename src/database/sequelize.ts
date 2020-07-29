@@ -1,10 +1,13 @@
-import { Sequelize } from 'sequelize-typescript'
+import { Sequelize } from 'sequelize'
 import db from '../../config/db'
 
 const { mysql } = db
 
 // 连接 mysql 数据库
-const sequelize = new Sequelize(mysql.database, mysql.user, mysql.password || null, {
+const sequelize = new Sequelize(
+  mysql.database,
+  mysql.username,
+  mysql.password, {
   host: mysql.host,
   port: mysql.port,
   dialect: 'mysql', // 什么数据库
