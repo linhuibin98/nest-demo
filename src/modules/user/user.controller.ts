@@ -12,12 +12,12 @@ export class UserController {
   constructor(private readonly userService : UserService) {}
 
   @Post('/register')
-  userRegister(@Body() { username, password }): ResponseData {
-    return this.userService.userRegister({username, password})
-  }
+  userRegister(@Body() body): any {
+    return this.userService.userRegister(body)
+  } 
 
   @Get('/find')
-  findOne(@Query('username') username) {
+  findOne(@Query('username') username): any {
     return this.userService.findOne(username)
   }
 
